@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh chi so can nang</title>
+</head>
+<body >
+<input type="text" id="weight" placeholder="Nhap so can nang">Kg <br> <br>
+<input type="text" id="height" placeholder="Nhap chieu cao">M <br><br>
+<button id="check" onclick="check()">Kiem tra BMI</button>
+<div id='bmi'></div>
+<div id="bmiStat"></div>
+<script>
+    function check() {
+        let weight = parseInt(document.getElementById('weight').value)
+        let height = parseInt(document.getElementById('height').value)
+        let bmi = weight / (height ^ 2)
+
+        if (bmi < 18.5){
+            document.getElementById('bmiStat').innerHTML= 'Under Weight'
+        }else if (bmi < 25.0){
+            document.getElementById('bmiStat').innerHTML= 'Normal'
+        }else if (bmi < 30) {
+            document.getElementById('bmiStat').innerHTML= 'Over Weight'
+        }else {
+            document.getElementById('bmiStat').innerHTML= 'Obese'
+        }
+        document.getElementById('bmi').innerHTML = 'Chi so BMI cua ban la: '+ bmi;
+    }
+
+</script>
+</body>
+</html>
